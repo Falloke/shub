@@ -9,12 +9,15 @@ export default {
       computerChoice: "",
       result: "",
       gameOver: false,
-      heartchoice:"src/img/Heart.png"
+      heartchoice:"https://static.thenounproject.com/png/2336169-200.png"
     };
   },
   methods: {
     playGame() {
-      const choices = ["src/img/Rock.png", "src/img/Paper.png", "src/img/Scissor.png","src/img/Heart.png"];
+      const choices = ["https://static.thenounproject.com/png/477918-200.png",
+       "https://static.thenounproject.com/png/477922-200.png",
+        "https://static.thenounproject.com/png/88666-200.png",
+        "https://static.thenounproject.com/png/2336169-200.png"];
       this.playerChoice = choices[Math.floor(Math.random() * choices.length)];
       this.computerChoice = choices[Math.floor(Math.random() * choices.length)];
       this.calculateResult();
@@ -23,18 +26,19 @@ export default {
     calculateResult() {
       if (this.playerChoice === this.computerChoice) {
         this.result = "เสมอ";
-      }else if(this.playerChoice === "src/img/Heart.png"){
+      }else if(this.playerChoice === "https://static.thenounproject.com/png/2336169-200.png"){
         this.result = "ผู้เล่น 1 ชนะ";
         this.scoreone += 1;
       }
-      else if(this.computerChoice === "src/img/Heart.png"){
+      else if(this.computerChoice === "https://static.thenounproject.com/png/2336169-200.png"){
         this.result = "ผู้เล่น 2 ชนะ";
         this.scoretwo += 1;
       }
+      
       else if (
-        (this.playerChoice === "src/img/Rock.png" && this.computerChoice === "game/src/img/Scissor.png") ||
-        (this.playerChoice === "src/img/Paper.png" && this.computerChoice === "src/img/Rock.png") ||
-        (this.playerChoice === "src/img/Scissor.png" && this.computerChoice === "src/img/Paper.png")
+        (this.playerChoice === "https://static.thenounproject.com/png/477918-200.png" && this.computerChoice === "https://static.thenounproject.com/png/88666-200.pngg") ||
+        (this.playerChoice === "https://static.thenounproject.com/png/477922-200.png" && this.computerChoice === "https://static.thenounproject.com/png/477918-200.png") ||
+        (this.playerChoice === "https://static.thenounproject.com/png/88666-200.png" && this.computerChoice === "https://static.thenounproject.com/png/477922-200.png")
       ) {
         this.result = "ผู้เล่น 1 ชนะ";
         this.scoreone += 1;
